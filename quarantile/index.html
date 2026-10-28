@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quarantile – Sci-Fi Tile Strategy for iPhone & Android</title>
+<meta name="description" content="The research ship NOVARA has gone silent. Build your way through the ship tile by tile, roll the dice for your crew – and keep the alien slime from following you. Coming soon.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Quarantile – Build the ship. Outrun the slime.">
+<meta property="og:description" content="A tactical sci-fi tile-laying game with dice, a crew of 8 and a story campaign in 10 missions. Coming soon to iPhone and Android.">
+<meta property="og:image" content="https://flyingmarcopologames.github.io/img/quarantile/hero.jpg">
+<meta property="og:url" content="https://flyingmarcopologames.github.io/quarantile/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../img/quarantile/icon.png">
+<style>
+  :root {
+    --bg: #050a16; --surface: #0b1426; --surface-2: #0f1c35; --text: #e6f1ff; --muted: #92a6c4; --line: #1b2c4b;
+    --cyan: #3fe0ff; --slime: #8dff3a;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  a { color: var(--cyan); }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+  header.top { background: rgba(5,10,22,.92); position: sticky; top: 0; z-index: 5; border-bottom: 1px solid var(--line);
+               backdrop-filter: blur(6px); }
+  header.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .brand { display: flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; font-weight: 800; letter-spacing: 1.5px; }
+  .brand img { width: 36px; height: 36px; border-radius: 9px; }
+  header.top nav a { color: #cfe6ff; text-decoration: none; margin-left: 18px; font-weight: 600; font-size: 15px; }
+
+  .hero .art { display: block; width: 100%; height: auto; max-height: 640px; object-fit: cover; object-position: center bottom; }
+  .hero .wrap { padding-top: 30px; padding-bottom: 80px; }
+  .hero h1 { font-size: clamp(30px, 5vw, 52px); line-height: 1.1; margin: 0 0 14px; letter-spacing: .5px; text-transform: uppercase; }
+  .hero h1 span { color: var(--slime); text-shadow: 0 0 18px rgba(141,255,58,.45); }
+  .hero p.lead { font-size: clamp(17px, 2.2vw, 20px); margin: 0 0 24px; max-width: 700px; color: #c3d4ee; }
+  .soon { display: inline-flex; align-items: center; gap: 10px; padding: 12px 20px; border-radius: 14px; font-weight: 800;
+          letter-spacing: .6px; color: #04121d; background: linear-gradient(90deg, var(--cyan), #7af0ff);
+          box-shadow: 0 0 24px rgba(63,224,255,.35); }
+  .badges { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 15px; color: #9fb7d8; }
+
+  section { padding: 72px 0; }
+  section h2 { font-size: clamp(26px, 3.4vw, 36px); margin: 0 0 10px; line-height: 1.2; text-transform: uppercase; letter-spacing: .5px; }
+  section p.sub { color: var(--muted); margin: 0 0 36px; max-width: 700px; }
+
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: -40px; position: relative; z-index: 3; }
+  .stat { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 18px; text-align: center;
+          box-shadow: 0 0 0 1px rgba(63,224,255,.06), 0 12px 30px rgba(0,0,0,.4); }
+  .stat b { display: block; font-size: 30px; color: var(--cyan); line-height: 1.1; }
+  .stat span { color: var(--muted); font-size: 14px; }
+
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .step { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 20px; position: relative; }
+  .step .n { font-weight: 900; color: var(--slime); font-size: 14px; letter-spacing: 1px; }
+  .step h3 { margin: 6px 0 6px; font-size: 18px; }
+  .step p { margin: 0; color: var(--muted); font-size: 15px; }
+
+  .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .feature { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 22px; }
+  .feature .ic { font-size: 26px; }
+  .feature h3 { margin: 8px 0 6px; font-size: 19px; }
+  .feature p { margin: 0; color: var(--muted); font-size: 16px; }
+
+  .shots { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .shots img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--line);
+               box-shadow: 0 14px 40px rgba(0,0,0,.45); }
+
+  .band { background: radial-gradient(600px 220px at 85% 0%, rgba(141,255,58,.18), transparent),
+                      linear-gradient(135deg, #0c2550, #0a6a8a); border-radius: 22px; padding: 44px 32px;
+          display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 22px; border: 1px solid #1f4f7a; }
+  .band h2 { margin: 0 0 6px; }
+  .band p { margin: 0; color: #cfe6ff; }
+
+  .faq details { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 14px 18px; margin-bottom: 10px; }
+  .faq summary { cursor: pointer; font-weight: 700; }
+  .faq p { margin: 10px 0 2px; color: var(--muted); }
+
+  footer { border-top: 1px solid var(--line); padding: 30px 0 46px; color: var(--muted); font-size: 15px; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 10px 24px; justify-content: space-between; }
+
+  @media (max-width: 860px) {
+    .stats, .steps { grid-template-columns: repeat(2, 1fr); }
+    .features { grid-template-columns: 1fr 1fr; }
+    .shots { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px) {
+    body { font-size: 16px; }
+    header.top nav a:not(:first-child) { display: none; }
+    .features, .steps { grid-template-columns: 1fr; }
+    section { padding: 56px 0; }
+    .band { padding: 32px 22px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#"><img src="../img/quarantile/icon.png" alt="">QUARANTILE</a>
+    <nav><a href="../">All games</a><a href="#play">How it plays</a><a href="#screens">Screenshots</a><a href="#faq">FAQ</a></nav>
+  </div>
+</header>
+
+<div class="hero">
+  <img class="art" src="../img/quarantile/hero.jpg" alt="Quarantile – the research ship NOVARA in orbit">
+  <div class="wrap">
+    <h1>Build the ship. <span>Outrun the slime.</span></h1>
+    <p class="lead">The research ship NOVARA has gone silent. Your crew wakes up from cryosleep – and something has been growing in the corridors. Explore the ship by placing room tiles, reach the goal rooms and complete your mission. But every path you open is a path for the slime, too.</p>
+    <div class="soon">COMING SOON · iPhone &amp; Android</div>
+    <div class="badges"><span>✓ Free to play</span><span>✓ Plays offline, no account</span><span>✓ English · Deutsch · Français · Italiano · Português</span></div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat"><b>10</b><span>story missions</span></div>
+    <div class="stat"><b>8</b><span>crew members</span></div>
+    <div class="stat"><b>14</b><span>trophies</span></div>
+    <div class="stat"><b>5</b><span>languages</span></div>
+  </div>
+</div>
+
+<section id="play">
+  <div class="wrap">
+    <h2>How it plays</h2>
+    <p class="sub">A tactical tile-laying game with dice. Every round you plan your crew's moves – then the ship fights back.</p>
+    <div class="steps">
+      <div class="step"><div class="n">01 · ROLL</div><h3>Roll the dice</h3><p>Pick a crew member and roll their dice.</p></div>
+      <div class="step"><div class="n">02 · ACT</div><h3>Spend the pips</h3><p>Move, search, fight, clean slime – or build new rooms. Expensive rooms need two dice.</p></div>
+      <div class="step"><div class="n">03 · BUILD</div><h3>Find the route</h3><p>Lay a path of room tiles to the goal rooms that are already visible on the map.</p></div>
+      <div class="step"><div class="n">04 · SURVIVE</div><h3>The ship strikes back</h3><p>Slime grows and spreads, aliens hatch, mutate and hunt your crew.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>Features</h2>
+    <p class="sub">How long can your crew keep the slime in quarantine?</p>
+    <div class="features">
+      <div class="feature"><div class="ic">🛰️</div><h3>Story campaign</h3><p>10 missions with dialogue scenes – find out what happened aboard the NOVARA.</p></div>
+      <div class="feature"><div class="ic">🧑‍🚀</div><h3>8 crew members</h3><p>Each with their own skills, weapons and weaknesses – choose 4 for every mission.</p></div>
+      <div class="feature"><div class="ic">🎒</div><h3>Loot and gear</h3><p>Weapons, tools and supplies – but watch the weight limit of every backpack.</p></div>
+      <div class="feature"><div class="ic">🗂️</div><h3>The Arsenal</h3><p>Build your own room and gear decks before each mission.</p></div>
+      <div class="feature"><div class="ic">⬆️</div><h3>Level up</h3><p>Your crew gains experience and unlocks improvements.</p></div>
+      <div class="feature"><div class="ic">☠️</div><h3>Expert mode</h3><p>All 10 missions in a row – whoever falls is lost for the whole run.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="screens" style="padding-top:0">
+  <div class="wrap">
+    <h2>Take a look inside</h2>
+    <p class="sub">Made for phones and tablets, played in landscape.</p>
+    <div class="shots">
+      <img src="../img/quarantile/board.jpg" alt="The ship map with room tiles, dice and crew" loading="lazy">
+      <img src="../img/quarantile/dice.jpg" alt="Rolling and placing dice" loading="lazy">
+      <img src="../img/quarantile/crew.jpg" alt="Choosing 4 of 8 crew members" loading="lazy">
+      <img src="../img/quarantile/story.jpg" alt="A story scene aboard the NOVARA" loading="lazy">
+      <img src="../img/quarantile/round.jpg" alt="The aliens' turn" loading="lazy">
+      <img src="../img/quarantile/inventory.jpg" alt="Inventory and gear" loading="lazy">
+      <img src="../img/quarantile/expert.jpg" alt="Expert mode" loading="lazy">
+      <img src="../img/quarantile/menu.jpg" alt="Main menu" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="band">
+      <div><h2>Wake up soon.</h2><p>Quarantile is coming to the App Store and Google Play. Want to know when it's out? Write us a line.</p></div>
+      <a class="soon" href="mailto:flyingmarcopologames@hotmail.com?subject=Quarantile" style="text-decoration:none">Tell me when it's out</a>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="padding-top:0">
+  <div class="wrap faq">
+    <h2>Questions</h2>
+    <details><summary>When will Quarantile be released?</summary><p>Soon – on iPhone and Android. Follow this page or write to us and we'll let you know.</p></details>
+    <details><summary>Do I need an internet connection?</summary><p>No. Quarantile plays offline and needs no account.</p></details>
+    <details><summary>Is there a tutorial?</summary><p>Yes. The first mission includes a guided tutorial.</p></details>
+    <details><summary>Which languages are available?</summary><p>English, German, French, Italian and Portuguese.</p></details>
+    <details><summary>I have a question or an idea</summary><p>Write to <a href="mailto:flyingmarcopologames@hotmail.com">flyingmarcopologames@hotmail.com</a>. Every message is read.</p></details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 <a href="../">FlyingMarcoPolo Games</a> · <a href="mailto:flyingmarcopologames@hotmail.com">flyingmarcopologames@hotmail.com</a></div>
+    <div><a href="https://sites.google.com/view/flyingmarcopolo-games/quarantile-privacy">Privacy policy</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
