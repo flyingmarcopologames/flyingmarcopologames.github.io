@@ -68,6 +68,10 @@
   .feature h3 { margin: 8px 0 6px; font-size: 19px; }
   .feature p { margin: 0; color: var(--muted); font-size: 16px; }
 
+  .video { position: relative; aspect-ratio: 16 / 9; border-radius: 18px; overflow: hidden; background: #0b1b36;
+           box-shadow: 0 14px 40px rgba(10,30,60,.18); }
+  .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
   .shots { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
   figure { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
   figure img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; }
@@ -106,7 +110,7 @@
 <header class="top">
   <div class="wrap">
     <a class="brand" href="#"><img src="../airline-chief-icon.png" alt="">The Airline Chief</a>
-    <nav><a href="../">All games</a><a href="#features">Features</a><a href="#screens">Screenshots</a><a href="#faq">FAQ</a><a href="https://discord.gg/v6U55z464">Discord</a><a href="https://www.youtube.com/@theairlinechief">YouTube</a><a href="#contact">Contact</a></nav>
+    <nav><a href="../">All games</a><a href="#trailer">Trailer</a><a href="#features">Features</a><a href="#screens">Screenshots</a><a href="#faq">FAQ</a><a href="https://discord.gg/v6U55z464">Discord</a><a href="https://www.youtube.com/@theairlinechief">YouTube</a><a href="#contact">Contact</a></nav>
   </div>
 </header>
 
@@ -124,7 +128,7 @@
         <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3.6 2.3c-.3.3-.5.8-.5 1.4v16.6c0 .6.2 1.1.5 1.4l9.3-9.7-9.3-9.7zm10.4 10.8 2.6 2.7-11.4 6.6 8.8-9.3zm0-2.2L5.2 1.6l11.4 6.6-2.6 2.7zm3.9-1.9 3 1.7c.9.5.9 1.9 0 2.4l-3 1.7-2.8-2.9 2.8-2.9z"/></svg>
         Get it on Google Play
       </a>
-      <a class="btn ghost" href="#screens">See the game</a>
+      <a class="btn ghost" href="#trailer">Watch the trailer</a>
     </div>
     <div class="badges"><span>✓ Free to play</span><span>✓ 7 languages</span><span>✓ iPhone &amp; Android</span></div>
   </div></div>
@@ -138,6 +142,14 @@
     <div class="stat"><b>13</b><span>campaign missions</span></div>
   </div>
 </div>
+
+<section id="trailer" style="padding-bottom:0">
+  <div class="wrap">
+    <h2>Watch the trailer</h2>
+    <p class="sub">One minute of The Airline Chief: your terminal, your fleet, your cabins and your routes around the world.</p>
+    <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/OW5xzGPX1X0?rel=0" title="The Airline Chief – Official Trailer" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  </div>
+</section>
 
 <section id="new" style="padding-bottom:0">
   <div class="wrap">
@@ -194,7 +206,7 @@
   <div class="wrap">
     <div class="band">
       <div><h2>Ready for take-off?</h2><p>The Airline Chief is free on the App Store and Google Play. Meet other airline CEOs on our Discord.</p></div>
-      <div class="cta"><a class="btn primary" href="https://apps.apple.com/app/id6819271795">App Store</a><a class="btn primary" href="https://play.google.com/store/apps/details?id=com.airlineceo.game">Google Play</a><a class="btn ghost" href="https://discord.gg/v6U55z464">Join the Discord</a><a class="btn ghost" href="https://youtu.be/OLQyFFpX2WY">Watch the trailer</a></div>
+      <div class="cta"><a class="btn primary" href="https://apps.apple.com/app/id6819271795">App Store</a><a class="btn primary" href="https://play.google.com/store/apps/details?id=com.airlineceo.game">Google Play</a><a class="btn ghost" href="https://discord.gg/v6U55z464">Join the Discord</a><a class="btn ghost" href="https://youtu.be/OW5xzGPX1X0">Watch the trailer</a></div>
     </div>
   </div>
 </section>
