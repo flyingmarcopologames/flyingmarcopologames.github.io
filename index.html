@@ -11,7 +11,8 @@
 <meta property="og:image" content="https://flyingmarcopologames.github.io/img/hero.jpg">
 <meta property="og:url" content="https://flyingmarcopologames.github.io/">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="airline-chief-icon.png">
+<link rel="icon" type="image/png" href="img/studio/badge-64.png">
+<link rel="apple-touch-icon" href="img/studio/badge-180.png">
 <style>
   :root {
     --bg: #f6f7fb; --surface: #ffffff; --text: #141a2a; --muted: #5b6478; --line: #e1e5ee;
@@ -30,6 +31,13 @@
   header.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
   .studio { color: #fff; font-weight: 800; letter-spacing: .3px; text-decoration: none; font-size: 19px; }
   .studio span { color: #ffb347; }
+  .studio { display: flex; align-items: center; gap: 10px; }
+  .studio img { height: 36px; width: auto; display: block; }
+  .intro .wrap { display: flex; align-items: center; gap: 40px; }
+  .intro .txt { flex: 1; min-width: 0; }
+  .intro .logo { width: 300px; max-width: 34%; height: auto; flex: none; }
+  @media (max-width: 720px) { .intro .wrap { flex-direction: column-reverse; align-items: flex-start; gap: 24px; } .intro .logo { width: 200px; max-width: 60%; } }
+  footer .flogo { height: 22px; vertical-align: -5px; margin-right: 6px; }
   header.top nav a { color: #fff; text-decoration: none; margin-left: 18px; font-weight: 600; font-size: 15px; }
 
   .intro { background: radial-gradient(1200px 400px at 20% -10%, #2c3f8f 0%, var(--ink) 60%); color: #fff; }
@@ -91,15 +99,18 @@
 
 <header class="top">
   <div class="wrap">
-    <a class="studio" href="#">FlyingMarcoPolo <span>Games</span></a>
+    <a class="studio" href="#"><img src="img/studio/emblem.png" alt="">FlyingMarcoPolo <span>Games</span></a>
     <nav><a href="#games">Games</a><a href="#privacy">Privacy</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
   </div>
 </header>
 
 <div class="intro">
   <div class="wrap">
+    <div class="txt">
     <h1>Games for your pocket.</h1>
     <p>FlyingMarcoPolo Games is a small independent studio. We make mobile games we love to play ourselves – free on iPhone and Android, in English, German and French.</p>
+    </div>
+    <img class="logo" src="img/studio/logo-dark.png" alt="FLYINGMARCOPOLO GAMES logo" width="720" height="568">
   </div>
 </div>
 
@@ -183,7 +194,7 @@
 
 <footer>
   <div class="wrap">
-    <div>© 2026 FlyingMarcoPolo Games · <a href="mailto:flyingmarcopologames@hotmail.com">flyingmarcopologames@hotmail.com</a></div>
+    <div><img class="flogo" src="img/studio/emblem.png" alt="">© 2026 FlyingMarcoPolo Games · <a href="mailto:flyingmarcopologames@hotmail.com">flyingmarcopologames@hotmail.com</a></div>
     <nav>
       <a href="https://sites.google.com/view/flyingmarcopolo-games/privacy-policy-ios">Privacy: The Airline Chief (iOS)</a>
       <a href="https://sites.google.com/view/flyingmarcopolo-games/privacy-policy">Privacy: The Airline Chief (Android)</a>
