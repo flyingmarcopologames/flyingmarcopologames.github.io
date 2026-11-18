@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FlyingMarcoPolo Games – Mobile Games for iPhone & Android</title>
-<meta name="description" content="FlyingMarcoPolo Games is a small independent studio making mobile games: The Airline Chief, Gossip Granny and Quarantile. Free on the App Store and Google Play.">
+<meta name="description" content="FlyingMarcoPolo Games is a small independent studio making mobile games: The Airline Chief, Gossip Granny, Quarantile and XENOCODEX. Free on the App Store and Google Play.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="FlyingMarcoPolo Games">
-<meta property="og:description" content="A small independent studio making mobile games: The Airline Chief, Gossip Granny and Quarantile.">
+<meta property="og:description" content="A small independent studio making mobile games: The Airline Chief, Gossip Granny, Quarantile and XENOCODEX.">
 <meta property="og:image" content="https://flyingmarcopologames.github.io/img/hero.jpg">
 <meta property="og:url" content="https://flyingmarcopologames.github.io/">
 <meta name="twitter:card" content="summary_large_image">
@@ -61,6 +61,15 @@
   .soon { display: inline-block; background: #ffb347; color: #1a1200; font-weight: 800; font-size: 13px;
           border-radius: 999px; padding: 3px 10px; letter-spacing: .3px; }
 
+  .legal { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .lg { display: flex; align-items: center; gap: 14px; background: var(--surface); border: 1px solid var(--line);
+        border-radius: 16px; padding: 14px 18px; }
+  .lg img { width: 48px; height: 48px; border-radius: 12px; }
+  .lg b { display: block; font-size: 17px; }
+  .lg a { font-size: 15px; font-weight: 600; }
+  .legalnote { color: var(--muted); font-size: 15px; margin: 18px 0 0; }
+  @media (max-width: 560px) { .legal { grid-template-columns: 1fr; } }
+
   .about { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
   .about p { margin: 0 0 12px; color: var(--muted); }
 
@@ -83,7 +92,7 @@
 <header class="top">
   <div class="wrap">
     <a class="studio" href="#">FlyingMarcoPolo <span>Games</span></a>
-    <nav><a href="#games">Games</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+    <nav><a href="#games">Games</a><a href="#privacy">Privacy</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
   </div>
 </header>
 
@@ -133,7 +142,29 @@
         </div>
       </article>
 
+      <article class="game">
+        <a class="pic" href="xenocodex/"><img src="xenocodex/img/hero.jpg" alt="XENOCODEX"></a>
+        <div class="body">
+          <div class="head"><img src="xenocodex/img/icon.png" alt=""><div><h3>XENOCODEX</h3><div class="tag">First-person puzzle · alien language</div></div></div>
+          <p>An alien ship has crashed in the desert and its reactor is leaking. Every sign is written in a script no human has ever seen – decipher 250 alien words and 34 grammar rules, room by room, before it is too late.</p>
+          <div class="links"><span class="soon">COMING SOON</span><a class="btn line" href="xenocodex/">More about the game →</a></div>
+        </div>
+      </article>
+
     </div>
+  </div>
+</section>
+
+<section id="privacy" style="padding-top:0">
+  <div class="wrap">
+    <h2>Privacy policies</h2>
+    <div class="legal">
+      <div class="lg"><img src="airline-chief-icon.png" alt=""><div><b>The Airline Chief</b><a href="https://sites.google.com/view/flyingmarcopolo-games/privacy-policy">Android</a> · <a href="https://sites.google.com/view/flyingmarcopolo-games/privacy-policy-ios">iOS</a></div></div>
+      <div class="lg"><img src="gossip-granny/img/icon.png" alt=""><div><b>Gossip Granny</b><a href="https://sites.google.com/view/flyingmarcopolo-games/gossip-granny-privacy">Privacy policy</a></div></div>
+      <div class="lg"><img src="img/quarantile/icon.png" alt=""><div><b>Quarantile</b><a href="https://sites.google.com/view/flyingmarcopolo-games/quarantile-privacy">Privacy policy</a></div></div>
+      <div class="lg"><img src="xenocodex/img/icon.png" alt=""><div><b>XENOCODEX</b><a href="https://sites.google.com/view/flyingmarcopolo-games/xenocodex-privacy">Privacy policy</a></div></div>
+    </div>
+    <p class="legalnote">Ads in our games are served by Google AdMob and partner networks. Advertising sellers: <a href="app-ads.txt">app-ads.txt</a></p>
   </div>
 </section>
 
@@ -157,6 +188,8 @@
       <a href="https://sites.google.com/view/flyingmarcopolo-games/privacy-policy-ios">Privacy: The Airline Chief (iOS)</a>
       <a href="https://sites.google.com/view/flyingmarcopolo-games/privacy-policy">Privacy: The Airline Chief (Android)</a>
       <a href="https://sites.google.com/view/flyingmarcopolo-games/gossip-granny-privacy">Privacy: Gossip Granny</a>
+      <a href="https://sites.google.com/view/flyingmarcopolo-games/quarantile-privacy">Privacy: Quarantile</a>
+      <a href="https://sites.google.com/view/flyingmarcopolo-games/xenocodex-privacy">Privacy: XENOCODEX</a>
       <a href="https://discord.gg/v6U55z464">Discord: The Airline Chief</a>
       <a href="https://www.youtube.com/@theairlinechief">YouTube: The Airline Chief</a>
     </nav>
